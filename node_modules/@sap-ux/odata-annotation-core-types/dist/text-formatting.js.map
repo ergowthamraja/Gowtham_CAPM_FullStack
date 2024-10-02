@@ -1,0 +1,1 @@
+{"version":3,"file":"text-formatting.js","sourceRoot":"","sources":["../src/text-formatting.ts"],"names":[],"mappings":";;;AAAO,MAAM,YAAY,GAAG,CAAC,IAAY,EAAU,EAAE,CAAC,IAAI,IAAI,GAAG,CAAC;AAArD,QAAA,YAAY,gBAAyC;AAuBrD,QAAA,YAAY,GAAqB;IAC1C,UAAU,EAAE,GAAG;IACf,QAAQ,EAAE,CAAC;IACX,OAAO,EAAE,KAAK;IACd,gBAAgB,EAAE,IAAI;CACzB,CAAC"}

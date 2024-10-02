@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+  <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+    <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+    <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+  </edmx:Reference>
+  <edmx:DataServices>
+    <Schema Namespace="CatalogService" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <EntityContainer Name="EntityContainer">
+        <EntitySet Name="IntroSet" EntityType="CatalogService.IntroSet"/>
+        <EntitySet Name="empDetailsSet" EntityType="CatalogService.empDetailsSet"/>
+        <EntitySet Name="certificateSet" EntityType="CatalogService.certificateSet"/>
+        <EntitySet Name="profSummarySet" EntityType="CatalogService.profSummarySet"/>
+        <EntitySet Name="overViewSet" EntityType="CatalogService.overViewSet"/>
+      </EntityContainer>
+      <EntityType Name="IntroSet">
+        <Key>
+          <PropertyRef Name="empName"/>
+        </Key>
+        <Property Name="empName" Type="Edm.String" Nullable="false"/>
+        <Property Name="mobile" Type="Edm.String" MaxLength="100"/>
+        <Property Name="email" Type="Edm.String" MaxLength="100"/>
+        <Property Name="designation" Type="Edm.String" MaxLength="100"/>
+        <Property Name="location" Type="Edm.String" MaxLength="100"/>
+        <Property Name="linkeinUrl" Type="Edm.String" MaxLength="100"/>
+        <Property Name="githubUrl" Type="Edm.String" MaxLength="100"/>
+      </EntityType>
+      <EntityType Name="empDetailsSet">
+        <Key>
+          <PropertyRef Name="employer"/>
+        </Key>
+        <Property Name="employerLogo" Type="Edm.String"/>
+        <Property Name="employer" Type="Edm.String" Nullable="false"/>
+        <Property Name="designation" Type="Edm.String" MaxLength="100"/>
+        <Property Name="startDate" Type="Edm.Date"/>
+        <Property Name="endDate" Type="Edm.Date"/>
+      </EntityType>
+      <EntityType Name="certificateSet">
+        <Property Name="certName" Type="Edm.String"/>
+        <Property Name="certLink" Type="Edm.String"/>
+      </EntityType>
+      <EntityType Name="profSummarySet">
+        <Property Name="summary" Type="Edm.String"/>
+      </EntityType>
+      <EntityType Name="overViewSet">
+        <Property Name="description" Type="Edm.String"/>
+      </EntityType>
+      <Annotations Target="CatalogService.IntroSet/empName">
+        <Annotation Term="Common.Label" String="Employee Name"/>
+      </Annotations>
+      <Annotations Target="CatalogService.IntroSet/mobile">
+        <Annotation Term="Common.Label" String="Mobile"/>
+      </Annotations>
+      <Annotations Target="CatalogService.IntroSet/email">
+        <Annotation Term="Common.Label" String="Email Id"/>
+      </Annotations>
+      <Annotations Target="CatalogService.IntroSet/designation">
+        <Annotation Term="Common.Label" String="Designation"/>
+      </Annotations>
+      <Annotations Target="CatalogService.IntroSet/location">
+        <Annotation Term="Common.Label" String="Location"/>
+      </Annotations>
+      <Annotations Target="CatalogService.IntroSet/linkeinUrl">
+        <Annotation Term="Common.Label" String="Linkedin Url"/>
+      </Annotations>
+      <Annotations Target="CatalogService.IntroSet/githubUrl">
+        <Annotation Term="Common.Label" String="Github Url"/>
+      </Annotations>
+      <Annotations Target="CatalogService.empDetailsSet/employerLogo">
+        <Annotation Term="Common.Label" String="Employer Logo"/>
+      </Annotations>
+      <Annotations Target="CatalogService.empDetailsSet/employer">
+        <Annotation Term="Common.Label" String="Employer"/>
+      </Annotations>
+      <Annotations Target="CatalogService.empDetailsSet/designation">
+        <Annotation Term="Common.Label" String="Designation"/>
+      </Annotations>
+      <Annotations Target="CatalogService.empDetailsSet/startDate">
+        <Annotation Term="Common.Label" String="Start Date"/>
+      </Annotations>
+      <Annotations Target="CatalogService.empDetailsSet/endDate">
+        <Annotation Term="Common.Label" String="End Date"/>
+      </Annotations>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

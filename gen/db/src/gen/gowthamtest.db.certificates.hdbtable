@@ -1,0 +1,4 @@
+COLUMN TABLE gowthamtest_db_certificates (
+  certName NVARCHAR(5000),
+  certLink NVARCHAR(5000)
+)

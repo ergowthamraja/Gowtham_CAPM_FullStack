@@ -1,0 +1,23 @@
+_schema-version: '3.1'
+ID: <%- project.name %>
+version: <%- project.version %>
+description: "A simple CAP project."
+parameters:
+  deploy_mode: html5-repo
+  enable-parallel-deployments: true
+
+build-parameters:
+  before-all:
+   - builder: custom
+     commands:
+      - npm install --production
+      - <%- project.terminal %> -c "cds -v | grep 'cds-dk' || npm i --production --no-save @sap/cds-dk @sap/mdk-tools"
+      - <%- project.terminal %> -c "export PATH=$PATH:$(pwd)/node_modules/.bin"
+      - cds build --production
+  after-all:
+   - builder: custom
+     commands:
+      - npm install
+modules:
+
+resources:

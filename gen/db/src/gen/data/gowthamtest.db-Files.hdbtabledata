@@ -1,0 +1,31 @@
+{
+  "format_version": 1,
+  "imports": [
+    {
+      "target_table": "GOWTHAMTEST_DB_FILES",
+      "source_data": {
+        "data_type": "CSV",
+        "file_name": "gowthamtest.db-Files.csv",
+        "has_header": true,
+        "type_config": {
+          "delimiter": ","
+        }
+      },
+      "import_settings": {
+        "import_columns": [
+          "CONTENT",
+          "MEDIATYPE",
+          "FILENAME",
+          "URL"
+        ],
+        "include_filter": []
+      },
+      "column_mappings": {
+        "CONTENT": "content",
+        "MEDIATYPE": "mediaType",
+        "FILENAME": "fileName",
+        "URL": "url"
+      }
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "name": "gowthamtest",
+  "version": "0.0.1",
+  "description": "testdecription",
+  "dependencies": {
+    "@cap-js-community/odata-v2-adapter": "^1.13.3",
+    "@sap/audit-logging": "^5.8.2",
+    "@sap/cds": "^6",
+    "@sap/cds-hana": "^2",
+    "@sap/xssec": "^3",
+    "debug": "^4.3",
+    "express": "^4",
+    "hdb": "^0.19.9",
+    "passport": "^0"
+  },
+  "devDependencies": {
+    "@sap/dev-cap-tools": "^1.31.0",
+    "@sap/ux-specification": "^1.120.1",
+    "rimraf": "^3.0.2",
+    "sqlite3": "^5.1.6"
+  },
+  "scripts": {
+    "start": "npx cds run",
+    "watch-sapbtpresume": "cds watch --open sapbtpresume/webapp/index.html?sap-ui-xx-viewCache=false",
+    "undeploy": "cf undeploy gowthamtest --delete-services --delete-service-keys --delete-service-brokers",
+    "build": "rimraf resources mta_archives && mbt build --mtar archive",
+    "deploy": "cf deploy mta_archives/archive.mtar --retries 1"
+  },
+  "cds": {
+    "cov2ap": {
+      "plugin": true
+    },
+    "requires": {
+      "db": {
+        "[production]": {
+          "kind": "hana"
+        },
+        "[development]": {
+          "kind": "sql"
+        }
+      }
+    },
+    "hana": {
+      "deploy-format": "hdbtable"
+    },
+    "auth": {
+      "kind": "xsuaa"
+    }
+  },
+  "sapux": [
+    "app/sapbtpresume"
+  ]
+}

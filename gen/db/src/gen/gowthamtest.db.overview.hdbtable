@@ -1,0 +1,3 @@
+COLUMN TABLE gowthamtest_db_overview (
+  description NVARCHAR(5000)
+)

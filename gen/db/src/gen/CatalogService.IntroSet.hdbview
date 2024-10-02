@@ -1,0 +1,9 @@
+VIEW CatalogService_IntroSet AS SELECT
+  Intro_0.empName,
+  Intro_0.mobile,
+  Intro_0.email,
+  Intro_0.designation,
+  Intro_0.location,
+  Intro_0.linkeinUrl,
+  Intro_0.githubUrl
+FROM gowthamtest_db_Intro AS Intro_0

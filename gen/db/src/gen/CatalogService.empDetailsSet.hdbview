@@ -1,0 +1,7 @@
+VIEW CatalogService_empDetailsSet AS SELECT
+  empDetails_0.employerLogo,
+  empDetails_0.employer,
+  empDetails_0.designation,
+  empDetails_0.startDate,
+  empDetails_0.endDate
+FROM gowthamtest_db_empDetails AS empDetails_0

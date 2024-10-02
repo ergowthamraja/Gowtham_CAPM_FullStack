@@ -1,0 +1,1 @@
+{"version":3,"file":"draftSupport.d.ts","sourceRoot":"","sources":["../../src/metadata/draftSupport.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAe,eAAe,EAAE,MAAM,yBAAyB,CAAC;AAI5E,OAAO,KAAK,EAAE,SAAS,EAAE,MAAM,cAAc,CAAC;AA+C9C,wBAAgB,uBAAuB,CACnC,WAAW,EAAE,MAAM,EACnB,SAAS,EAAE,SAAS,EACpB,YAAY,EAAE,eAAe,GAC9B,GAAG,CAAC,MAAM,CAAC,CAeb"}

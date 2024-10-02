@@ -1,0 +1,8 @@
+COLUMN TABLE gowthamtest_db_empDetails (
+  employerLogo NVARCHAR(5000),
+  employer NVARCHAR(5000) NOT NULL,
+  designation NVARCHAR(100),
+  startDate DATE,
+  endDate DATE,
+  PRIMARY KEY(employer)
+)

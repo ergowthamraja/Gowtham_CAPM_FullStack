@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="CatalogService" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityContainer Name="EntityContainer" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="IntroSet" EntityType="CatalogService.IntroSet"/>
+                <EntitySet Name="empDetailsSet" EntityType="CatalogService.empDetailsSet"/>
+                <EntitySet Name="MediaFileSet" EntityType="CatalogService.MediaFileSet"/>
+            </EntityContainer>
+            <EntityType Name="IntroSet">
+                <Key>
+                    <PropertyRef Name="empName"/>
+                </Key>
+                <Property Name="empName" Type="Edm.String" Nullable="false"/>
+                <Property Name="mobile" Type="Edm.String" MaxLength="100"/>
+                <Property Name="email" Type="Edm.String" MaxLength="100"/>
+                <Property Name="designation" Type="Edm.String" MaxLength="100"/>
+                <Property Name="location" Type="Edm.String" MaxLength="100"/>
+                <Property Name="linkeinUrl" Type="Edm.String" MaxLength="100"/>
+                <Property Name="githubUrl" Type="Edm.String" MaxLength="100"/>
+            </EntityType>
+            <EntityType Name="empDetailsSet">
+                <Key>
+                    <PropertyRef Name="empName"/>
+                </Key>
+                <Property Name="empName" Type="Edm.String" Nullable="false"/>
+                <Property Name="designation" Type="Edm.String" MaxLength="100"/>
+                <Property Name="startDate" Type="Edm.DateTime" sap:display-format="Date"/>
+                <Property Name="endDate" Type="Edm.DateTime" sap:display-format="Date"/>
+            </EntityType>
+            <EntityType Name="MediaFileSet" m:HasStream="true">
+                <Key>
+                    <PropertyRef Name="id"/>
+                </Key>
+                <Property Name="id" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="mediaType" Type="Edm.String"/>
+                <Property Name="fileName" Type="Edm.String"/>
+                <Property Name="url" Type="Edm.String"/>
+            </EntityType>
+            <Annotations Target="CatalogService.IntroSet/empName" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="Employee Name"/>
+            </Annotations>
+            <Annotations Target="CatalogService.IntroSet/mobile" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="Mobile"/>
+            </Annotations>
+            <Annotations Target="CatalogService.IntroSet/email" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="Email Id"/>
+            </Annotations>
+            <Annotations Target="CatalogService.IntroSet/designation" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="Designation"/>
+            </Annotations>
+            <Annotations Target="CatalogService.IntroSet/location" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="Location"/>
+            </Annotations>
+            <Annotations Target="CatalogService.IntroSet/linkeinUrl" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="Linkedin Url"/>
+            </Annotations>
+            <Annotations Target="CatalogService.IntroSet/githubUrl" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="Github Url"/>
+            </Annotations>
+            <Annotations Target="CatalogService.MediaFileSet" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Core.MediaType" Path="mediaType"/>
+            </Annotations>
+            <Annotations Target="CatalogService.MediaFileSet/mediaType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Core.IsMediaType" Bool="true"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

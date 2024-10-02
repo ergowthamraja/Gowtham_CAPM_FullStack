@@ -1,0 +1,6 @@
+    <Column id="<%= id %>">
+        <Text text="<%= text %>"/>
+        <customData>
+            <core:CustomData key="p13nData" value="\{&quot;columnKey&quot;: &quot;<%= columnKey %>&quot;, &quot;columnIndex&quot;: &quot;<%= columnIndex %>&quot;, &quot;leadingProperty&quot;: &quot;<%= leadingProperty %>&quot;}"/>
+        </customData>
+    </Column>

@@ -1,0 +1,10 @@
+name: <%- project.prefix %>-db-deployer
+type: hdb
+path: gen/db
+parameters:
+  buildpack: nodejs_buildpack
+build-parameters:
+  builder: npm
+  ignore:
+    - node_modules
+    - package-lock.json

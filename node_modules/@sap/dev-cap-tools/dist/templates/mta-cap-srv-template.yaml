@@ -1,0 +1,14 @@
+name: <%- project.prefix %>-srv
+type: nodejs
+path: gen/srv
+parameters:
+  memory: 256MB
+provides:
+  - name: srv-api
+    properties:
+      srv-url: <%- url %>
+build-parameters:
+  builder: npm
+  ignore:
+    - node_modules
+    - package-lock.json

@@ -1,0 +1,25 @@
+{
+  "format_version": 1,
+  "imports": [
+    {
+      "target_table": "GOWTHAMTEST_DB_PROFSUMMARY",
+      "source_data": {
+        "data_type": "CSV",
+        "file_name": "gowthamtest.db-profSummary.csv",
+        "has_header": true,
+        "type_config": {
+          "delimiter": ";"
+        }
+      },
+      "import_settings": {
+        "import_columns": [
+          "SUMMARY"
+        ],
+        "include_filter": []
+      },
+      "column_mappings": {
+        "SUMMARY": "summary"
+      }
+    }
+  ]
+}

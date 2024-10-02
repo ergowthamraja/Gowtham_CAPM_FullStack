@@ -1,0 +1,8 @@
+description
+The application is developed using SAP BTP CAP Framework.
+Attachments/Media Handling
+Database resides in HANA Cloud Database
+OData V4 & V2 services are used
+Deployment in Cloud Floundary(CF) environment
+Fiori Launchpad Configuration
+Approuter Configuration

@@ -1,0 +1,22 @@
+GET http://localhost:4004/catalogService/IntroSet
+
+###
+POST http://localhost:4004/Attachments/FilesSet
+Content-Type: application/json
+
+{
+    "fileName":"test.pdf",
+    "mediaType":"pdf"
+}
+
+###
+GET http://localhost:4004/Attachments/Files(6e97705b-6bcb-43df-bc14-73f54cb286db)/url
+Content-Type: application/json
+
+###
+GET http://localhost:4004/catalogService/certificateSet
+
+###
+GET http://localhost:4004/catalogService/profSummarySet
+
+

@@ -1,0 +1,3 @@
+VIEW CatalogService_overViewSet AS SELECT
+  overview_0.description
+FROM gowthamtest_db_overview AS overview_0

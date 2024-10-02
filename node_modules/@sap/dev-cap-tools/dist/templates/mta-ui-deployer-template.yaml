@@ -1,0 +1,6 @@
+name: <%- moduleName %>
+type: com.sap.application.content
+path: build/ui-deployer
+build-parameters:
+  build-result: resources
+  requires: []

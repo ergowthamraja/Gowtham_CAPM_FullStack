@@ -1,0 +1,3 @@
+COLUMN TABLE gowthamtest_db_profSummary (
+  summary NVARCHAR(5000)
+)

@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.TargetControl = void 0;
+var TargetControl;
+(function (TargetControl) {
+    TargetControl["header"] = "header";
+    TargetControl["body"] = "body";
+    TargetControl["footer"] = "footer";
+    TargetControl["section"] = "@com.sap.vocabularies.UI.v1.FieldGroup";
+    TargetControl["table"] = "@com.sap.vocabularies.UI.v1.LineItem";
+})(TargetControl || (exports.TargetControl = TargetControl = {}));
+//# sourceMappingURL=types.js.map

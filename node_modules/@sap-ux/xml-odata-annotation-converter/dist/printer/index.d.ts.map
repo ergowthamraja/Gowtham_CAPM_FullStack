@@ -1,0 +1,1 @@
+{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["../../src/printer/index.ts"],"names":[],"mappings":"AAAA,OAAO,EACH,kBAAkB,EAClB,oBAAoB,EACpB,gBAAgB,EAChB,kBAAkB,EAClB,eAAe,EAClB,MAAM,mBAAmB,CAAC;AAC3B,cAAc,cAAc,CAAC;AAC7B,OAAO,EAAE,wBAAwB,EAAE,YAAY,EAAE,eAAe,EAAE,MAAM,eAAe,CAAC;AACxF,OAAO,EAAE,MAAM,EAAE,iBAAiB,EAAE,MAAM,qBAAqB,CAAC"}

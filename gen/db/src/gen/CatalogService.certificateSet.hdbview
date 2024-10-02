@@ -1,0 +1,4 @@
+VIEW CatalogService_certificateSet AS SELECT
+  certificates_0.certName,
+  certificates_0.certLink
+FROM gowthamtest_db_certificates AS certificates_0

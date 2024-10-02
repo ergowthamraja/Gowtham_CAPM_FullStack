@@ -1,0 +1,10 @@
+COLUMN TABLE gowthamtest_db_Intro (
+  empName NVARCHAR(5000) NOT NULL,
+  mobile NVARCHAR(100),
+  email NVARCHAR(100),
+  designation NVARCHAR(100),
+  location NVARCHAR(100),
+  linkeinUrl NVARCHAR(100),
+  githubUrl NVARCHAR(100),
+  PRIMARY KEY(empName)
+)

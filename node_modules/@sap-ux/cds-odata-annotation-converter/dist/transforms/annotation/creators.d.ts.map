@@ -1,0 +1,1 @@
+{"version":3,"file":"creators.d.ts","sourceRoot":"","sources":["../../../src/transforms/annotation/creators.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,KAAK,EAAE,MAAM,qCAAqC,CAAC;AAcjE,eAAO,MAAM,mBAAmB,UAJb,MAAM,cAAc,KAAK,GAAG,SAAS,4DAIW,CAAC;AACpE,eAAO,MAAM,wBAAwB,UALlB,MAAM,cAAc,KAAK,GAAG,SAAS,4DAKqB,CAAC;AAC9E,eAAO,MAAM,uBAAuB,UANjB,MAAM,cAAc,KAAK,GAAG,SAAS,4DAMmB,CAAC"}

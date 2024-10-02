@@ -1,0 +1,3 @@
+VIEW CatalogService_profSummarySet AS SELECT
+  profSummary_0.summary
+FROM gowthamtest_db_profSummary AS profSummary_0

@@ -1,0 +1,94 @@
+_schema-version: "3.2"
+ID: gowthamtest
+version: 0.0.1
+modules:
+  #-------- DB Module Start -----------------------#
+  - name: gowthamtest-db-deployer
+    type: hdb
+    path: gen/db  # Path for the DB module
+    requires:
+      - name: gowthamtest-db
+        properties:
+          TARGET_CONTAINER: gowthamtest_HDI
+    parameters:
+      buildpack: nodejs_buildpack
+  #-------- DB Module End -----------------------# 
+
+  #-------- Service Module Start -----------------------#
+  - name: gowthamtest-srv
+    type: nodejs
+    path: gen/srv  # Path for the Service module
+    requires:
+      - name: gowthamtest-db
+    provides:
+      - name: srv-api
+        properties:
+          srv-url: ${default-url}
+    parameters:
+      buildpack: nodejs_buildpack
+  #-------- Service Module End -----------------------#   
+
+  #-------- UI Module Start -----------------------#
+  - name: gowthamtest-app-content
+    type: com.sap.application.content
+    path: .  # Path for the main UI module
+    requires:
+      - name: gowthamtest-repo-host
+        parameters:
+          content-target: true
+    build-parameters:
+      build-result: resources
+      requires:
+        - artifacts:
+            - sapbtpresume.zip  # Zip file to be included
+          name: sapbtpresume
+          target-path: resources/
+  - name: sapbtpresume
+    type: html5
+    path: app/sapbtpresume  # Path for the HTML5 app
+    build-parameters:
+      build-result: dist
+      builder: custom
+      commands:
+        - npm install
+        - npm run build:cf
+      supported-platforms: []
+  #-------- UI Module End -----------------------#      
+
+resources:
+  #-------- Database Resource Start -----------------------#   
+  - name: gowthamtest-db
+    type: com.sap.xs.hdi-container
+    parameters:
+      config:
+        schema: gowthamtest_HDI
+      service: hana
+      service-name: gowthamtest_HDI
+      service-plan: hdi-shared
+    properties:
+      hdi-service-name: ${service-name}
+  #-------- Database Resource End -----------------------#   
+
+  #-------- HTML5 Apps Repository Resource Start -----------------------#   
+  - name: gowthamtest-repo-host
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: html5-apps-repo
+      service-name: gowthamtest-html5-srv
+      service-plan: app-host
+  #-------- HTML5 Apps Repository Resource End -----------------------#   
+
+  #-------- Destination Service Resource Start -----------------------#   
+  - name: gowthamtest-destination-service
+    type: org.cloudfoundry.managed-service
+    parameters:
+      config:
+        HTML5Runtime_enabled: true
+        version: 1.0.0
+      service: destination
+      service-name: gowthamtest-destination-service
+      service-plan: lite
+  #-------- Destination Service Resource End -----------------------#   
+
+parameters:
+  deploy_mode: html5-repo  # Parameter for deployment mode
