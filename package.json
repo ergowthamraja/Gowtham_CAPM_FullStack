@@ -10,7 +10,7 @@
     "@sap/xssec": "^3",
     "debug": "^4.3",
     "express": "^4",
-    "hdb": "^0.19.9",
+    "hdb": "^0.19.10",
     "passport": "^0"
   },
   "devDependencies": {
